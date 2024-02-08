@@ -1,0 +1,8 @@
+celsius_input = int(input("enter the degree in celsius")) 
+print (f"your enetered value is {celsius_input} degree celsius")
+degree_k = float(celsius_input + 273.15)
+degree_f = float((celsius_input*(9/5))+32)
+print ("Converted Temperatures")
+print (f"{celsius_input} celsius is equal to {degree_f} fahrenheit")
+print (f"{celsius_input} celsius is equal to {degree_k} Kelvin")
+print ("thank you for using the temperature converter")
