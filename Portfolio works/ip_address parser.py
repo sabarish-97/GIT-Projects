@@ -14,9 +14,10 @@ def file_update(import_file, remove_list):    # import file consists of allowed 
     with open(import_file, "w") as file:
         file.write(text)
 
-file_update("allow_list.txt", ["192.168.25.60", "192.168.140.81", "192.168.203.198"])
+file_update("allow_list.txt", ["192.168.6.9", "192.168.140.81", "192.168.203.198"])
 
 with open("allow_list.txt", "r") as file:
     text1 = file.read()
+print(f"please find the updated IP Address details")
 print(text1)
             
