@@ -15,7 +15,9 @@ def file_update(import_file, remove_list):    # import file consists of allowed 
         text = " ".join(text_list)            # convert list to string
     with open(import_file, "w") as file:
         file.write(text)                      # update the file 
-blacklisted_ip = ["192.168.52.90", "192.168.140.81", "192.168.203.198"]
+
+blacklisted_ip = ["192.168.158.170", "192.168.140.81", "192.168.203.198"]
+
 file_update("allow_list.txt", blacklisted_ip )
 
 with open("allow_list.txt", "r") as file:     # read the contents of the file
