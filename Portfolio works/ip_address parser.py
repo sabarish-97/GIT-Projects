@@ -16,7 +16,7 @@ def file_update(import_file, remove_list):    # import file consists of allowed 
 
 file_update("allow_list.txt", ["192.168.25.60", "192.168.140.81", "192.168.203.198"])
 
-with open("allow.txt", "r") as file:
+with open("allow_list.txt", "r") as file:
     text1 = file.read()
 print(text1)
             
