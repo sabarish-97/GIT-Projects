@@ -19,11 +19,8 @@ file_update("allow_list.txt", ["192.168.6.9", "192.168.140.81", "192.168.203.198
 with open("allow_list.txt", "r") as file:     # read the contents of the file
     text1 = file.read()
 print(f"please find the updated IP Address details that are allowed")
-print(text1)
 pattern = "\d+\.\d+\.\d+\.\d+\d"
 separated_string = re.findall(pattern, text1) # using regex to split individual IP address
-print(f"{separated_string}")
-print(type(separated_string))
 for i in separated_string:                    # using for loop to print IP Address line by line
     print(f"{i}")
 
