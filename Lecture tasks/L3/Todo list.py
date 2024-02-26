@@ -3,28 +3,37 @@ def add_task(taskaddstring):
     list_init.append(taskaddstring)
     
 def view_task():
-    print(f"{list_init}")
-    
+    print("----------------")
+    for i, tasks in enumerate(list_init):
+        print(i+1, tasks)
+    print("----------------")   
 
 def remove_task():
-    print(f"this is the list{list_init}")
+    print("----------------")
+    for i, tasks in enumerate(list_init):
+        print(i+1, tasks)
+    print("----------------")  
     rem1 = int(input("please select which task you want to remove from the list"))
     rem_calc = rem1 - 1
     list_init.pop(rem_calc)
-    print(f"The updated list is as follows {list_init}")
+    print("----------------")
+    for i, tasks in enumerate(list_init):
+        print(i+1, tasks)
+    print("----------------")  
 
 def exit_program():
     print("thank you for using the program, Program exited")
     quit()
     
 def input_option():
+    print("#####   TO-DO LIST   ######")
     print("1. Add a new task\n2. View the current tasks in the list\n3. Remove a task from the list\n4. Quit and exit the program ")
     input1 = int(input("please select an option to proceed\n"))
     return input1
 
 def loop_function():
     get_input = input_option()
-    while get_input < 5:
+    while get_input < 6:
 
         if get_input == 1:
             new_task = str(input("please enter a new task\n"))
@@ -42,11 +51,15 @@ def loop_function():
             loop_function()
             break
 
+        elif get_input ==4:
+            quit()
+
         else:
             print("\nplease select a valid selection")
             break
 
 list_init = []
 loop_function()
+print("Thank you for using the program")
 
     
