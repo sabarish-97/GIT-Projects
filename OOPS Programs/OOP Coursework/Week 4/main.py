@@ -7,11 +7,11 @@ def propagate_task_list(task_list: TaskList) -> TaskList:
 
     
     task_list.add_task(Task("Buy groceries", datetime.datetime.now() - datetime.timedelta(days=4),"Restock Vegetables"))
-   # task_list.add_task(Task("Do laundry", datetime.datetime.now() - datetime.timedelta(days=-2)))
-    #task_list.add_task(Task("Clean room", datetime.datetime.now() + datetime.timedelta(days=-1)))
-    #task_list.add_task(Task("Do homework", datetime.datetime.now() + datetime.timedelta(days=3)))
-    #task_list.add_task(Task("Walk dog", datetime.datetime.now() + datetime.timedelta(days=5)))
-    #task_list.add_task(Task("Do dishes", datetime.datetime.now() + datetime.timedelta(days=6)))
+    task_list.add_task(Task("Do laundry", datetime.datetime.now() - datetime.timedelta(days=-2),"Wash white clothes"))
+    task_list.add_task(Task("Clean room", datetime.datetime.now() + datetime.timedelta(days=-1),"Clean store room"))
+    task_list.add_task(Task("Do homework", datetime.datetime.now() + datetime.timedelta(days=3),"Do OOP Homework"))
+    task_list.add_task(Task("Walk dog", datetime.datetime.now() + datetime.timedelta(days=5),"Take the pug"))
+    task_list.add_task(Task("Do dishes", datetime.datetime.now() + datetime.timedelta(days=6),"Only the white plates"))
 
     return task_list
 

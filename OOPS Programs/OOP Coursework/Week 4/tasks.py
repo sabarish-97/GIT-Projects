@@ -3,13 +3,13 @@ import datetime
 class Task:
     
 
-    def __init__(self, title: str, date_due: datetime.datetime,description):
+    def __init__(self, title: str, date_due: datetime.datetime,description):  # added description as parameter
         
         self.title = title
         self.date_created = datetime.datetime.now()
         self.completed = False
         self.date_due = date_due
-        self.description = description
+        self.description = description         # added description to as attribute
 
     def change_title(self, new_title: str) -> None:
         
