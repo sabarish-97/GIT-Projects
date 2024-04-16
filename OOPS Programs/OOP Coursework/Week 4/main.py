@@ -3,20 +3,15 @@ from tasks import Task
 import datetime
 
 def propagate_task_list(task_list: TaskList) -> TaskList:
-    """Propagates a task list with some sample tasks.
+    
 
-    Args:
-        task_list (TaskList): Task list to propagate.
-
-    Returns:
-        TaskList: The propagated task list.
-    """
-    task_list.add_task(Task("Buy groceries", datetime.datetime.now() - datetime.timedelta(days=4)))
-    task_list.add_task(Task("Do laundry", datetime.datetime.now() - datetime.timedelta(days=-2)))
-    task_list.add_task(Task("Clean room", datetime.datetime.now() + datetime.timedelta(days=-1)))
-    task_list.add_task(Task("Do homework", datetime.datetime.now() + datetime.timedelta(days=3)))
-    task_list.add_task(Task("Walk dog", datetime.datetime.now() + datetime.timedelta(days=5)))
-    task_list.add_task(Task("Do dishes", datetime.datetime.now() + datetime.timedelta(days=6)))
+    
+    task_list.add_task(Task("Buy groceries", datetime.datetime.now() - datetime.timedelta(days=4),"Restock Vegetables"))
+   # task_list.add_task(Task("Do laundry", datetime.datetime.now() - datetime.timedelta(days=-2)))
+    #task_list.add_task(Task("Clean room", datetime.datetime.now() + datetime.timedelta(days=-1)))
+    #task_list.add_task(Task("Do homework", datetime.datetime.now() + datetime.timedelta(days=3)))
+    #task_list.add_task(Task("Walk dog", datetime.datetime.now() + datetime.timedelta(days=5)))
+    #task_list.add_task(Task("Do dishes", datetime.datetime.now() + datetime.timedelta(days=6)))
 
     return task_list
 
@@ -46,7 +41,8 @@ def main() -> None:
             input_date = input("Enter a due date (YYYY-MM-DD): ")
             date_object = datetime.datetime.strptime(input_date, "%Y-%m-%d")
             # create a new task object based on the title entered and the date entered
-            task = Task(title, date_object)
+            description1 = input("Enter a Description:")
+            task = Task(title, date_object, description1)
             task_list.add_task(task)
 
         elif choice == "2":
