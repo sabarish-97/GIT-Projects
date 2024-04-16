@@ -4,7 +4,7 @@ import datetime
 
 def propagate_task_list(task_list: TaskList) -> TaskList:
     
-
+        #adding arguments to new parameter description
     
     task_list.add_task(Task("Buy groceries", datetime.datetime.now() - datetime.timedelta(days=4),"Restock Vegetables"))
     task_list.add_task(Task("Do laundry", datetime.datetime.now() - datetime.timedelta(days=-2),"Wash white clothes"))
@@ -41,7 +41,7 @@ def main() -> None:
             input_date = input("Enter a due date (YYYY-MM-DD): ")
             date_object = datetime.datetime.strptime(input_date, "%Y-%m-%d")
             # create a new task object based on the title entered and the date entered
-            description1 = input("Enter a Description:")
+            description1 = input("Enter a Description:")   # added functionlaity to get description
             task = Task(title, date_object, description1)
             task_list.add_task(task)
 
@@ -63,7 +63,7 @@ def main() -> None:
                 input_date = input("Enter a new due date (YYYY-MM-DD): ")
                 date_object = datetime.datetime.strptime(input_date, "%Y-%m-%d")
                 task_list.tasks[ix].change_date_due(date_object)
-            if choice == "description":
+            if choice == "description":   # added functionality to change description
                 title = input("Enter a new description: ")
                 task_list.tasks[ix].change_description(title)
             else:
