@@ -1,7 +1,7 @@
 from tasklist import TaskList
 from tasks import Task
-from users import Owner
 import datetime
+from users import Owner
 
 def propagate_task_list(task_list: TaskList) -> TaskList:
     
@@ -27,6 +27,10 @@ def main() -> None:
 
     # propagate the task list with some sample tasks
     task_list = propagate_task_list(task_list)
+
+    owner_name = input("Enter your name: ")
+    owner = Owner(owner_name)
+    default_task_list = TaskList(owner)
 
 
     while True: 
