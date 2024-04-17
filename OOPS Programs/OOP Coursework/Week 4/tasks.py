@@ -28,5 +28,5 @@ class Task:
         self.completed = True
 
     def __str__(self) -> str:
-        return f"{self.title} (created: {self.date_created}, due: {self.date_due}, completed: {self.completed} description : {self.description})"  #added functionality to display description
+        return f"{self.title}, created: {self.date_created}, due: {self.date_due}, completed: {self.completed} description : {self.description})"  #added functionality to display description
     

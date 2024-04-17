@@ -12,6 +12,9 @@ def propagate_task_list(task_list: TaskList) -> TaskList:
     task_list.add_task(Task("Do homework", datetime.datetime.now() + datetime.timedelta(days=3),"Do OOP Homework"))
     task_list.add_task(Task("Walk dog", datetime.datetime.now() + datetime.timedelta(days=5),"Take the pug"))
     task_list.add_task(Task("Do dishes", datetime.datetime.now() + datetime.timedelta(days=6),"Only the white plates"))
+    task_list.add_task(Task("Do dishes", datetime.datetime.now() + datetime.timedelta(days=6),"jj"))
+
+
 
     return task_list
 
@@ -33,6 +36,7 @@ def main() -> None:
         print("4. Edit a task")
         print("5. Complete a task")
         print("6. Quit")
+        print("7. View overdue tasks")
             
         choice = input("Enter your choice: ") 
             
@@ -47,6 +51,7 @@ def main() -> None:
 
         elif choice == "2":
             task_list.view_tasks()
+           
 
         elif choice == "3":
             ix = int(input("Enter the index of the task to remove: "))
@@ -75,6 +80,9 @@ def main() -> None:
 
         elif choice == "6":
             break
+
+        elif choice == "7":
+            task_list.view_overdue_tasks()
 
 
 
