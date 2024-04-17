@@ -3,7 +3,7 @@ import datetime
 from users import Owner
 
 class TaskList:
-    def __init__(self, owner: Owner):
+    def __init__(self, owner: Owner): # added type as Owner
         
         self.owner = owner
         self.tasks = []

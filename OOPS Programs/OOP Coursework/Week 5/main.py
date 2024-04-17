@@ -30,7 +30,7 @@ def main() -> None:
 
     owner_name = input("Enter your name: ")
     owner = Owner(owner_name)
-    default_task_list = TaskList(owner)
+    task_list = TaskList(owner)  # saving a dfault task list with the owner class
 
 
     while True: 
