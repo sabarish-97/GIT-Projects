@@ -3,11 +3,7 @@ import datetime
 
 class TaskList:
     def __init__(self, owner: str):
-        """Creates a new task list. This contains a list of tasks.
-
-        Args:
-            owner (str): Owner of the task list.
-        """
+        
         self.owner = owner
         self.tasks: list[Task] = []
 
