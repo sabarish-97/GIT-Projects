@@ -23,6 +23,6 @@ class TaskList:
         current_date = datetime.datetime.now()
         print("Overdue tasks:")
         for task in self.tasks:
-            if Task.date_due < current_date and not task.completed:
+            if task.date_due < current_date and not Task.completed:
                 print(task)
 
