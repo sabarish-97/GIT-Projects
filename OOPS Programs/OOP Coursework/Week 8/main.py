@@ -72,16 +72,20 @@ def main() -> None:
             if choice == "title":
                 title = input("Enter a new title: ")
                 task_list.tasks[ix].change_title(title)
+                print("title changed successfully")
             elif choice == "due date":
                 input_date = input("Enter a new due date (YYYY-MM-DD): ")
                 date_object = datetime.datetime.strptime(input_date, "%Y-%m-%d")
                 task_list.tasks[ix].change_date_due(date_object)
+                print("due date changed successfully")
             elif choice == "description":   # added functionality to change description
                 title = input("Enter a new description: ")
                 task_list.tasks[ix].change_description(title)
+                print("desription changed successfully")
             elif choice == "priority":
                 priority = int(input("Enter a new priority (1 for low, 2 for medium, 3 for high): "))
                 task_list.tasks[ix].set_priority(priority)
+                print("Priority changed successfully")
             else:
                 print("Invalid choice.")
         
