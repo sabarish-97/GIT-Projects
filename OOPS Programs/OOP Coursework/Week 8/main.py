@@ -2,18 +2,20 @@ from tasklist import TaskList
 from tasks import Task
 import datetime
 from users import Owner
+from prioritytask import PriorityTask
 
 def propagate_task_list(task_list: TaskList) -> TaskList:
     
         #adding arguments to new parameter description
     
-    task_list.add_task(Task("Buy groceries", datetime.datetime.now() - datetime.timedelta(days=4),"Restock Vegetables"))
-    task_list.add_task(Task("Do laundry", datetime.datetime.now() - datetime.timedelta(days=-2),"Wash white clothes"))
-    task_list.add_task(Task("Clean room", datetime.datetime.now() + datetime.timedelta(days=-1),"Clean store room"))
-    task_list.add_task(Task("Do homework", datetime.datetime.now() + datetime.timedelta(days=3),"Do OOP Homework"))
-    task_list.add_task(Task("Walk dog", datetime.datetime.now() + datetime.timedelta(days=5),"Take the pug"))
-    task_list.add_task(Task("Do dishes", datetime.datetime.now() + datetime.timedelta(days=6),"Only the white plates"))
-    task_list.add_task(Task("Do dishes", datetime.datetime.now() + datetime.timedelta(days=6),"jj"))
+    task_list.add_task(PriorityTask("Buy groceries", datetime.datetime.now() - datetime.timedelta(days=4),2,"Restock Vegetables"))
+    #task_list.add_task(Task("Buy groceries", datetime.datetime.now() - datetime.timedelta(days=4),"Restock Vegetables"))
+    #task_list.add_task(Task("Do laundry", datetime.datetime.now() - datetime.timedelta(days=-2),"Wash white clothes"))
+    #task_list.add_task(Task("Clean room", datetime.datetime.now() + datetime.timedelta(days=-1),"Clean store room"))
+    #task_list.add_task(Task("Do homework", datetime.datetime.now() + datetime.timedelta(days=3),"Do OOP Homework"))
+    #task_list.add_task(Task("Walk dog", datetime.datetime.now() + datetime.timedelta(days=5),"Take the pug"))
+    #task_list.add_task(Task("Do dishes", datetime.datetime.now() + datetime.timedelta(days=6),"Only the white plates"))
+    #task_list.add_task(Task("Do dishes", datetime.datetime.now() + datetime.timedelta(days=6),"jj"))
 
 
 
@@ -51,7 +53,8 @@ def main() -> None:
             date_object = datetime.datetime.strptime(input_date, "%Y-%m-%d")
             # create a new task object based on the title entered and the date entered
             description1 = input("Enter a Description:")   # added functionlaity to get description
-            task = Task(title, date_object, description1)
+            priority = int(input("Enter priority (1 for low, 2 for medium, 3 for high): "))
+            task = PriorityTask(title, date_object, priority, description1)
             task_list.add_task(task)
 
         elif choice == "2":
@@ -64,7 +67,7 @@ def main() -> None:
     
         elif choice == "4":
             ix = int(input("Enter the index of the task to edit: "))
-            choice = input("What would you like to edit? (title/due date/description): ")
+            choice = input("What would you like to edit? (title/due date/priority/description): ")
 
             if choice == "title":
                 title = input("Enter a new title: ")
@@ -73,9 +76,12 @@ def main() -> None:
                 input_date = input("Enter a new due date (YYYY-MM-DD): ")
                 date_object = datetime.datetime.strptime(input_date, "%Y-%m-%d")
                 task_list.tasks[ix].change_date_due(date_object)
-            if choice == "description":   # added functionality to change description
+            elif choice == "description":   # added functionality to change description
                 title = input("Enter a new description: ")
                 task_list.tasks[ix].change_description(title)
+            elif choice == "priority":
+                priority = int(input("Enter a new priority (1 for low, 2 for medium, 3 for high): "))
+                task_list.tasks[ix].set_priority(priority)
             else:
                 print("Invalid choice.")
         
