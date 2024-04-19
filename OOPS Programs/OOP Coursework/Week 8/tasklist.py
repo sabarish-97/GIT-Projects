@@ -1,5 +1,4 @@
 from tasks import Task
-import datetime
 from users import Owner
 
 class TaskList:
@@ -19,10 +18,5 @@ class TaskList:
         for ix, task in enumerate(self.tasks):
             print(f"{ix}: {task}")
     
-    def view_overdue_tasks(self) -> None:
-        current_date = datetime.datetime.now()
-        print("Overdue tasks:")
-        for task in self.tasks:
-            if task.date_due < current_date and not Task.completed:
-                print(task)
+   
 
